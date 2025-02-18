@@ -142,8 +142,8 @@ def set_client():
 
             # Print the public message history
             for msg in public_msg_arr:
-                name, message = msg.replace('MSG_PUBLIC>', '').split('|', 1)
-                print(f'{name}: {message}')
+                name_pub, message = msg.replace('MSG_PUBLIC>', '').split('|', 1)
+                print(f'{name_pub}: {message}')
 
             send_thread = threading.Thread(target=send_message, args=(client, name, 'PUBLIC'))        
             send_thread.start()
