@@ -53,11 +53,16 @@ def receive_message(client):
                     # Initialize message dictionary
                     if name not in private_msg_dict:
                         private_msg_dict[name] = {}
+                    if recipient not in private_msg_dict:
+                        private_msg_dict[recipient] = {}
 
                     if recipient not in private_msg_dict[name]:
                         private_msg_dict[name][recipient] = []
+                    if name not in private_msg_dict[recipient]:
+                        private_msg_dict[recipient][name] = []
 
                     private_msg_dict[name][recipient].append(send_msg)
+                    private_msg_dict[recipient][name].append(send_msg)
 
                     print(private_msg_dict)
 
@@ -65,7 +70,7 @@ def receive_message(client):
                     if recipient in client_dict:
                         print(f'RECIPIENT: {client_dict[recipient]}')
                         client_dict[recipient].send(send_msg.encode(FORMAT))
-                        client_dict[recipient].send(json.dumps(private_msg_dict[name][recipient]).encode(FORMAT))
+                        client_dict[recipient].send(json.dumps(private_msg_dict).encode(FORMAT))
                     else:
                         client.send(f'ERROR>{recipient} is not online.'.encode(FORMAT))
                              

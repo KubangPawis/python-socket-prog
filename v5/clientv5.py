@@ -83,6 +83,7 @@ def receive_message(client):
 
 def send_message(client, name, message_type, recipient_name=''):
     global public_msg_arr
+    global private_msg_dict
     while True:
         try:
             print('You: ', end='', flush=True)
@@ -96,7 +97,7 @@ def send_message(client, name, message_type, recipient_name=''):
 
             #  Leave chat command
             if message.lower() == '!exit':
-                print("Disconnecting...")
+                print("[DEBUG] Disconnecting...")
                 break
 
             if message_type == 'PUBLIC':
@@ -106,12 +107,19 @@ def send_message(client, name, message_type, recipient_name=''):
 
             elif message_type == 'PRIVATE':
                 send_data = f'MSG_PRIVATE>{name}|{recipient_name}|{message}'
+                msg_record_data = f'MSG_PRIVATE>{name}|{message}'
                 client.send(send_data.encode(FORMAT))
 
+                if name not in private_msg_dict:
+                    private_msg_dict[name] = {}
+
+                if recipient_name not in private_msg_dict[name]:
+                    private_msg_dict[name][recipient_name] = []
+                
+                private_msg_dict[name][recipient_name].append(msg_record_data)
+
         except Exception as e:
-            print('ERROR FROM CLIENT')
-            print(e)
-            print("Error sending data.")
+            print(f"[DEBUG] Exception encountered: {e}")
             break
 
 def set_client():
@@ -188,6 +196,17 @@ def set_client():
             show_header(name)
             print(f'Chatting with: {selected_client_name}\n')
             is_in_selection = True
+
+            # Print the private message history
+            try:
+                for msg in private_msg_dict[name][selected_client_name]:
+                    name_priv, message = msg.replace('MSG_PRIVATE>', '').split('|', 1)
+                    if name_priv == name:
+                        print(f'You: {message}')
+                    else:
+                        print(f'{name_priv}: {message}')
+            except KeyError:
+                pass
 
             send_thread = threading.Thread(target=send_message, args=(client, name, 'PRIVATE', selected_client_name))        
             send_thread.start()
