@@ -36,6 +36,7 @@ def receive_message(client):
 
                     # Keep track of incoming messages, then send them each time a client sends a message
                     public_msg_arr.append(send_msg)
+                    print(public_msg_arr)
 
                     # Send to everyone that is NOT the sender
                     for client_name, socket in client_dict.items():
@@ -73,6 +74,7 @@ def receive_message(client):
                 print(e)
                 print("Error receiving data.")
                 break
+    client_dict.pop(name, None)
     client.close()
 
 def set_server():
