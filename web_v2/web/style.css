@@ -12,6 +12,10 @@
   --text-color: #f2f2f2;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-image: linear-gradient(90deg, blue, purple);
   font-family: "Poppins";
@@ -32,6 +36,16 @@ li {
 a {
   color: var(--text-color);
   text-decoration: none;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.card-img-top {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .header-title {
@@ -66,6 +80,54 @@ a {
 
 .hero-subtitle {
   color: #d1d1d1;
+}
+
+.card-listing {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 4rem;
+}
+
+.feature-card {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card .card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.feature-card .card-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.feature-card .btn:hover {
+  background: linear-gradient(45deg, #0056b3, #004494);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+#projects-feature {
+  background-color: darkblue;
+  padding: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
 }
 
 .primary-button {
