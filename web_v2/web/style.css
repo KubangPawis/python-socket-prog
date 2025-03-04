@@ -26,7 +26,6 @@ header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 1rem;
 }
 
 li {
@@ -40,6 +39,10 @@ a {
 
 .container-fluid {
   padding: 0;
+}
+
+.site-header {
+  padding: 2rem;
 }
 
 .card-img-top {
