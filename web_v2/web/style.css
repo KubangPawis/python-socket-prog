@@ -123,6 +123,31 @@ a {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
+.achievement-section {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 20px 100px;
+}
+
+.achievement-section img {
+  height: 60%;
+  object-fit: cover;
+}
+
+.achievement-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.achievement-text p {
+  max-width: 60%;
+  text-align: end;
+}
+
 #projects-feature {
   background-color: darkblue;
   padding: 10rem;
