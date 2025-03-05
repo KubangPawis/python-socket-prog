@@ -173,8 +173,14 @@ a {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
+.achievement-listing {
+  display: grid;
+  gap: 3rem;
+  padding: 3rem;
+}
+
 .achievement-section {
-  height: 100vh;
+  height: 300px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -183,7 +189,7 @@ a {
 }
 
 .achievement-section img {
-  height: 60%;
+  height: 100%;
   object-fit: cover;
 }
 
