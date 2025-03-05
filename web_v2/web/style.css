@@ -137,14 +137,27 @@ a {
   object-fit: cover;
 }
 
-.achievement-text {
+.achievement-text-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: rem;
+}
+
+.achievement-text-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  gap: 1rem;
 }
 
-.achievement-text p {
-  max-width: 60%;
+.achievement-text-left > * {
+  max-width: 80%;
+  text-align: start;
+}
+
+.achievement-text-right > * {
+  max-width: 80%;
   text-align: end;
 }
 
