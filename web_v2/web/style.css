@@ -221,7 +221,7 @@ a {
 
 .achievement-listing {
   display: grid;
-  gap: 3rem;
+  gap: 4rem;
   padding: 3rem;
 }
 
