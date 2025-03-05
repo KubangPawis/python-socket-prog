@@ -17,7 +17,8 @@ html {
 }
 
 body {
-  background-image: linear-gradient(90deg, blue, purple);
+  /*background-image: linear-gradient(90deg, blue, purple);*/
+  background-image: linear-gradient(90deg, #120a2b, #100240);
   font-family: "Poppins";
   color: #f2f2f2;
 }
@@ -63,26 +64,40 @@ a {
 
 .hero {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 4rem;
+  gap: 2rem;
   height: 100dvh;
-  padding: 4rem;
+  padding: 1rem;
+}
+
+.hero img {
+  height: 500px;
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .hero-header {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
   font-family: "Josefin Sans";
 }
 
 .hero-title {
-  font-size: 6rem;
+  font-size: 4rem;
 }
 
 .hero-subtitle {
   color: #d1d1d1;
+  font-size: 1.5rem;
+}
+
+.title-group {
+  display: grid;
+  gap: 0rem;
 }
 
 .card-listing {
