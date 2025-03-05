@@ -173,6 +173,17 @@ a {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
+.page-header {
+  text-align: center;
+  padding: 2rem;
+  font-family: "Josefin Sans";
+  text-transform: uppercase;
+}
+
+#page-header-text {
+  font-size: 3rem;
+}
+
 .project-listing {
   display: flex;
   gap: 3rem;
