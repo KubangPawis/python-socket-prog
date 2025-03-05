@@ -89,7 +89,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: start;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .feature-card {
@@ -163,12 +163,12 @@ a {
 
 #projects-feature {
   background-color: darkblue;
-  padding: 10rem;
+  padding: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10rem;
+  gap: 5rem;
 }
 
 .primary-button {
