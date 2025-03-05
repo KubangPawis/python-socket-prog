@@ -17,7 +17,6 @@ html {
 }
 
 body {
-  /*background-image: linear-gradient(90deg, blue, purple);*/
   background-image: linear-gradient(90deg, #120a2b, #100240);
   font-family: "Poppins";
   color: #f2f2f2;
@@ -65,10 +64,10 @@ a {
 .hero {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   text-align: center;
-  gap: 2rem;
-  height: 100dvh;
+  gap: 1rem;
+  height: 100%;
   padding: 1rem;
 }
 
@@ -78,21 +77,42 @@ a {
   object-fit: cover;
 }
 
-.hero-header {
+.hero-header-left {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: flex-start;
+  text-align: start;
+  gap: 1rem;
+  padding: 4rem;
   font-family: "Josefin Sans";
 }
+.hero-header-left p {
+  font-family: "Poppins";
+  font-size: 1rem;
+}
 
-.hero-title {
-  font-size: 4rem;
+.hero-header-right {
+  display: grid;
+  text-align: start;
+  gap: 2rem;
+  padding: 4rem;
+}
+
+.hero-title-left {
+  font-size: 3rem;
+}
+
+.hero-title-right {
+  font-size: 2rem;
 }
 
 .hero-subtitle {
   color: #d1d1d1;
   font-size: 1.5rem;
+}
+
+.hero-img {
+  display: none;
 }
 
 .title-group {
@@ -101,6 +121,7 @@ a {
 }
 
 .background-header {
+  display: none;
   font-family: "Inter";
   font-size: 300px;
   font-weight: 900;
@@ -191,7 +212,7 @@ a {
 }
 
 #projects-feature {
-  background-color: darkblue;
+  background-image: linear-gradient(90deg, #120a2b, #100240);
   padding: 5rem;
   display: flex;
   flex-direction: column;
@@ -202,7 +223,7 @@ a {
 
 .primary-button {
   all: unset;
-  padding: 12px 24px;
+  padding: 12px;
   font-size: 16px;
   font-weight: bold;
   color: white;
@@ -223,4 +244,24 @@ a {
 .primary-button:active {
   transform: scale(0.95);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .background-header {
+    display: block;
+    font-size: 200px;
+  }
+  .hero-img {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .background-header {
+    display: block;
+    font-size: 225px;
+  }
+  .hero-img {
+    display: block;
+  }
 }
